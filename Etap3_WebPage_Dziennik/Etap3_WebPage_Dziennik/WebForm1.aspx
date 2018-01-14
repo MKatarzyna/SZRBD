@@ -57,7 +57,7 @@
         <tr>
             <td class="auto-style3">Username:&nbsp; </td>
             <td class="auto-style5">
-                <asp:TextBox ID="TextBoxUsername" runat="server" Width="180px"></asp:TextBox>
+                <asp:TextBox ID="TextBoxUsername" runat="server" Width="180px">admin@dziennk.com</asp:TextBox>
             </td>
             <td class="auto-style9">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBoxUsername" ErrorMessage="The username is required." ForeColor="Red"></asp:RequiredFieldValidator>
@@ -66,7 +66,7 @@
         <tr>
             <td class="auto-style3">Password:</td>
             <td class="auto-style5">
-                <asp:TextBox ID="TextBoxPassword" runat="server" TextMode="Password" Width="180px"></asp:TextBox>
+                <asp:TextBox ID="TextBoxPassword" runat="server" Width="180px">haslo1</asp:TextBox>
             </td>
             <td class="auto-style9">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBoxPassword" ErrorMessage="The password is required." ForeColor="Red"></asp:RequiredFieldValidator>
@@ -76,9 +76,9 @@
             <td class="auto-style3">Type of user:</td>
             <td class="auto-style10">
                 <asp:RadioButtonList ID="RadioButtonList1" runat="server">
-                    <asp:ListItem>Admin</asp:ListItem>
                     <asp:ListItem>Student</asp:ListItem>
                     <asp:ListItem>Teacher</asp:ListItem>
+                    <asp:ListItem>Admin</asp:ListItem>
                 </asp:RadioButtonList>
             </td>
             <td class="auto-style9">
