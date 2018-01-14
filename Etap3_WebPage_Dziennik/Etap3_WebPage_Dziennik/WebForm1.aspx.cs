@@ -17,29 +17,6 @@ namespace Etap3_WebPage_Dziennik
 
         protected void ButtonLogin_Click(object sender, EventArgs e)
         {
-           // loginOnLoginPage = TextBoxUsername.Text;
-           // passwordOnLoginPage = TextBoxPassword.Text;
-           // System.Diagnostics.Debug.WriteLine("Logowanie");
-            // ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Hello')", true);
-
-          //  Response.Write("<script>alert('Data inserted successfully')</script>");
-            /*
-            string message = "Your request is being processed.";
-
-            System.Text.StringBuilder sb = new System.Text.StringBuilder();
-
-            sb.Append("alert('");
-
-            sb.Append(message);
-
-            sb.Append("');");
-            ClientScript.RegisterOnSubmitStatement(this.GetType(), "alert", sb.ToString());
-            */
-            //  TextBoxUsername.Text = "Smieciowy trolu! Ty!";
-            //Server.Transfer("Webform2.aspx");
-            //Response.Redirect("Webform2.aspx");
-
-
             String user = "";
             user = TextBoxUsername.Text;
 
@@ -47,7 +24,6 @@ namespace Etap3_WebPage_Dziennik
             password = TextBoxPassword.Text;
 
             // Sprawdz czy uzytkownik istnieje
-
             string queryStatement =
                 "SELECT COUNT(*) FROM UZYTKOWNICY_SYSTEMU WHERE Login_uzytkownika LIKE '" + user + "' AND Haslo_uzytkownika like '" + password + "'";
             SqlCommand _cmd = new SqlCommand(queryStatement, _con);
@@ -73,13 +49,7 @@ namespace Etap3_WebPage_Dziennik
                         queryStatement = "SELECT ID_administrator FROM ADMINISTRATOR WHERE ADMINISTRATOR.ID_uzytkownika = " + userID;
                         _cmd = new SqlCommand(queryStatement, _con);
                         int administratorID = (int)_cmd.ExecuteScalar();
-                        System.Diagnostics.Debug.WriteLine("ADMIN: " + administratorID);
-
-                        Response.Write("<script>alert('Admin succesfully logged: "+administratorID+"')</script>");
-                        /*this.Hide();
-                        AdminWindow adminWindow = new AdminWindow(administratorID);
-                        adminWindow.Closed += (s, args) => this.Close();
-                        adminWindow.Show();*/
+                        Response.Redirect("AdminPage.aspx?ID=" + administratorID);
                     }
 
                 }
@@ -93,13 +63,7 @@ namespace Etap3_WebPage_Dziennik
                         queryStatement = "SELECT ID_studenta FROM STUDENCI WHERE STUDENCI.ID_uzytkownika = " + userID;
                         _cmd = new SqlCommand(queryStatement, _con);
                         int studentID = (int)_cmd.ExecuteScalar();
-                        System.Diagnostics.Debug.WriteLine("STUDENT: " + studentID);
-                        Response.Write("<script>alert('Student succesfully logged: " + studentID + "')</script>");
-                        /*this.Hide();
-                        StudentWindow studentWindow = new StudentWindow(studentID);
-                        studentWindow.Closed += (s, args) => this.Close();
-                        studentWindow.Show();
-                        */
+                        Response.Redirect("StudentPage.aspx?ID=" + studentID);
                     }
                 }
                 else if (RadioButtonList1.SelectedIndex == 1)
@@ -112,13 +76,7 @@ namespace Etap3_WebPage_Dziennik
                         queryStatement = "SELECT ID_prowadzacego FROM PROWADZACY WHERE PROWADZACY.ID_uzytkownika = " + userID;
                         _cmd = new SqlCommand(queryStatement, _con);
                         int prowadzacyID = (int)_cmd.ExecuteScalar();
-                        System.Diagnostics.Debug.WriteLine("TEACHER: " + prowadzacyID);
-                         Response.Write("<script>alert('Teacher succesfully logged: "+prowadzacyID+"')</script>");
-                        /* this.Hide();
-                        TeacherWindow teacherWindow = new TeacherWindow(prowadzacyID);
-                        teacherWindow.Closed += (s, args) => this.Close();
-                        teacherWindow.Show();
-                        */
+                        Response.Redirect("TeacherPage.aspx?ID=" + prowadzacyID);
                     }
                 }
                 else
