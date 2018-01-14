@@ -33,6 +33,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -111,6 +112,9 @@
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="StudentPage.aspx" />
+    <Content Include="StudentPageProDec.aspx" />
+    <Content Include="StudentPageProGrades.aspx" />
+    <Content Include="StudentPageSubjects.aspx" />
     <Content Include="TeacherPage.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
@@ -133,6 +137,27 @@
     </Compile>
     <Compile Include="StudentPage.aspx.designer.cs">
       <DependentUpon>StudentPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentPageProDec.aspx.cs">
+      <DependentUpon>StudentPageProDec.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentPageProDec.aspx.designer.cs">
+      <DependentUpon>StudentPageProDec.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentPageProGrades.aspx.cs">
+      <DependentUpon>StudentPageProGrades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentPageProGrades.aspx.designer.cs">
+      <DependentUpon>StudentPageProGrades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentPageSubjects.aspx.cs">
+      <DependentUpon>StudentPageSubjects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentPageSubjects.aspx.designer.cs">
+      <DependentUpon>StudentPageSubjects.aspx</DependentUpon>
     </Compile>
     <Compile Include="TeacherPage.aspx.cs">
       <DependentUpon>TeacherPage.aspx</DependentUpon>
