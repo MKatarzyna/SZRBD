@@ -96,6 +96,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminPage.aspx" />
+    <Content Include="AdminPageGroups.aspx" />
+    <Content Include="AdminPageProjects.aspx" />
+    <Content Include="AdminPageStudents.aspx" />
+    <Content Include="AdminPageSubjects.aspx" />
+    <Content Include="AdminPageTeachers.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -126,6 +131,41 @@
     </Compile>
     <Compile Include="AdminPage.aspx.designer.cs">
       <DependentUpon>AdminPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPageGroups.aspx.cs">
+      <DependentUpon>AdminPageGroups.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPageGroups.aspx.designer.cs">
+      <DependentUpon>AdminPageGroups.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPageProjects.aspx.cs">
+      <DependentUpon>AdminPageProjects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPageProjects.aspx.designer.cs">
+      <DependentUpon>AdminPageProjects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPageStudents.aspx.cs">
+      <DependentUpon>AdminPageStudents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPageStudents.aspx.designer.cs">
+      <DependentUpon>AdminPageStudents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPageSubjects.aspx.cs">
+      <DependentUpon>AdminPageSubjects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPageSubjects.aspx.designer.cs">
+      <DependentUpon>AdminPageSubjects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPageTeachers.aspx.cs">
+      <DependentUpon>AdminPageTeachers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPageTeachers.aspx.designer.cs">
+      <DependentUpon>AdminPageTeachers.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -59,32 +59,32 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:Button ID="Button3" runat="server" Text="Your data" Width="200px" />
+                                    <asp:Button ID="Button3" runat="server" Text="Your data" Width="200px" BackColor="#99FF99" OnClick="Button3_Click" />
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:Button ID="Button4" runat="server" Text="Manage groups" Width="200px" />
+                                    <asp:Button ID="Button4" runat="server" Text="Manage groups" Width="200px" OnClick="Button4_Click" />
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:Button ID="Button5" runat="server" Text="Manage subjects" Width="200px" />
+                                    <asp:Button ID="Button5" runat="server" Text="Manage subjects" Width="200px" OnClick="Button5_Click" />
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:Button ID="Button6" runat="server" Text="Manage projects" Width="200px" />
+                                    <asp:Button ID="Button6" runat="server" Text="Manage projects" Width="200px" OnClick="Button6_Click" />
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:Button ID="Button7" runat="server" Text="Manage teachers" Width="200px" />
+                                    <asp:Button ID="Button7" runat="server" Text="Manage teachers" Width="200px" OnClick="Button7_Click" />
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:Button ID="Button9" runat="server" Text="Manage students" Width="200px" />
+                                    <asp:Button ID="Button9" runat="server" Text="Manage students" Width="200px" OnClick="Button9_Click" />
                                 </td>
                             </tr>
                             <tr>
@@ -94,7 +94,7 @@
                             </tr>
                         </table>
                     </td>
-                    <td>
+                    <td style="border-left-style: solid; border-left-width: 3px; border-left-color: #00FF00;">
                     <table class="auto-style13">
                         <tr>
                             <td class="auto-style7">

@@ -61,7 +61,7 @@ namespace Etap3_WebPage_Dziennik
 
             for (int i = 0; i < table.Rows.Count; i++)
             {
-                System.Diagnostics.Debug.WriteLine(table.Rows[i][0].ToString());
+                // System.Diagnostics.Debug.WriteLine(table.Rows[i][0].ToString());
                 DropDownList1.Items.Add(table.Rows[i][0].ToString());
             }
 

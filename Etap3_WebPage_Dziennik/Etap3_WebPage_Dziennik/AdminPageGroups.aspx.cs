@@ -9,38 +9,48 @@ using System.Web.UI.WebControls;
 
 namespace Etap3_WebPage_Dziennik
 {
-    public partial class StudentPageProGrades : System.Web.UI.Page
+    public partial class AdminPageGroups : System.Web.UI.Page
     {
         String strConnection = "Data Source=KATE-LAPTOP;Initial Catalog=Dziennik;User ID=Kate;Password=baza";
         SqlConnection _con;
-        string studentID = "";
+        string adminID = "";
         int idUzytkownika = -1;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             _con = new SqlConnection(strConnection);
-            studentID = Request.QueryString["ID"];
-            System.Diagnostics.Debug.WriteLine("id: " + studentID);
+            adminID = Request.QueryString["ID"];
+            System.Diagnostics.Debug.WriteLine("id: " + adminID);
         }
 
-        protected void ButtonYourData_Click(object sender, EventArgs e)
+        protected void Button3_Click(object sender, EventArgs e)
         {
-            Response.Redirect("StudentPage.aspx?ID=" + studentID);
+            Response.Redirect("AdminPage.aspx?ID=" + adminID);
         }
 
-        protected void ButtonSubjects_Click(object sender, EventArgs e)
+        protected void Button4_Click(object sender, EventArgs e)
         {
-            Response.Redirect("StudentPageSubjects.aspx?ID=" + studentID);
+            Response.Redirect("AdminPageGroups.aspx?ID=" + adminID);
         }
 
-        protected void ButtonProjDec_Click(object sender, EventArgs e)
+        protected void Button5_Click(object sender, EventArgs e)
         {
-            Response.Redirect("StudentPageProDec.aspx?ID=" + studentID);
+            Response.Redirect("AdminPageSubjects.aspx?ID=" + adminID);
         }
 
-        protected void ButtonProjGrades_Click(object sender, EventArgs e)
+        protected void Button6_Click(object sender, EventArgs e)
         {
-            Response.Redirect("StudentPageProGrades.aspx?ID=" + studentID);
+            Response.Redirect("AdminPageProjects.aspx?ID=" + adminID);
+        }
+
+        protected void Button7_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdminPageTeachers.aspx?ID=" + adminID);
+        }
+
+        protected void Button9_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdminPageStudents.aspx?ID=" + adminID);
         }
 
         protected void ButtonBackLP_Click(object sender, EventArgs e)
@@ -50,7 +60,7 @@ namespace Etap3_WebPage_Dziennik
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string queryStatement = "SELECT PROJEKTY.Nazwa_projektu, OCENY_PROJEKT.Ocena_projekt, OCENY_PROJEKT.Data_projekt, OCENY_PROJEKT.Uwagi_projekt, PROWADZACY.Imie_prowadzacego, PROWADZACY.Nazwisko_prowadzacego FROM OCENY_PROJEKT INNER JOIN STUDENCI ON OCENY_PROJEKT.ID_studenta = STUDENCI.ID_studenta INNER JOIN PROWADZACY ON OCENY_PROJEKT.ID_prowadzacego = PROWADZACY.ID_prowadzacego INNER JOIN PROJEKTY ON OCENY_PROJEKT.ID_projektu = PROJEKTY.ID_projektu WHERE STUDENCI.ID_studenta = " + studentID;
+            string queryStatement = "SELECT GRUPA.Nazwa_grupy, KIERUNEK.Nazwa_kierunku, WYDZIAL.Nazwa_wydzialu FROM GRUPA INNER JOIN KIERUNEK ON GRUPA.ID_kierunku = KIERUNEK.ID_kierunku INNER JOIN WYDZIAL ON KIERUNEK.ID_wydzialu = WYDZIAL.ID_wydzialu";
             SqlCommand _cmd = new SqlCommand(queryStatement, _con);
 
             SqlDataAdapter _dap = new SqlDataAdapter(_cmd);

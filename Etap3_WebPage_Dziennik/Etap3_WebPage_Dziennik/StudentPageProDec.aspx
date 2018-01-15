@@ -88,7 +88,30 @@
                     </table>
                 </td>
                 <td style="border-left-style: solid; border-left-width: 3px; border-left-color: #00FF00" class="auto-style14">
-                    &nbsp;</td>
+                    <table class="auto-style3">
+                        <tr>
+                            <td>
+                                <asp:GridView ID="GridView1" runat="server">
+                                </asp:GridView>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Load data" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                
+                                <asp:DropDownList ID="DropDownList1" runat="server">
+                                </asp:DropDownList>
+                                <asp:CheckBox ID="CheckBox1" runat="server" />
+                                <asp:Button ID="Button2" runat="server" Text="Button" />
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
             </tr>
         </table>
         </div>
