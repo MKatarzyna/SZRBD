@@ -121,6 +121,11 @@
     <Content Include="StudentPageProGrades.aspx" />
     <Content Include="StudentPageSubjects.aspx" />
     <Content Include="TeacherPage.aspx" />
+    <Content Include="TeacherPageGrProj.aspx" />
+    <Content Include="TeacherPageGrSub.aspx" />
+    <Content Include="TeacherPageProjDec.aspx" />
+    <Content Include="TeacherPageProjects.aspx" />
+    <Content Include="TeacherPageSubjects.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
@@ -205,6 +210,41 @@
     </Compile>
     <Compile Include="TeacherPage.aspx.designer.cs">
       <DependentUpon>TeacherPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherPageGrProj.aspx.cs">
+      <DependentUpon>TeacherPageGrProj.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeacherPageGrProj.aspx.designer.cs">
+      <DependentUpon>TeacherPageGrProj.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherPageGrSub.aspx.cs">
+      <DependentUpon>TeacherPageGrSub.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeacherPageGrSub.aspx.designer.cs">
+      <DependentUpon>TeacherPageGrSub.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherPageProjDec.aspx.cs">
+      <DependentUpon>TeacherPageProjDec.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeacherPageProjDec.aspx.designer.cs">
+      <DependentUpon>TeacherPageProjDec.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherPageProjects.aspx.cs">
+      <DependentUpon>TeacherPageProjects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeacherPageProjects.aspx.designer.cs">
+      <DependentUpon>TeacherPageProjects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherPageSubjects.aspx.cs">
+      <DependentUpon>TeacherPageSubjects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeacherPageSubjects.aspx.designer.cs">
+      <DependentUpon>TeacherPageSubjects.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
