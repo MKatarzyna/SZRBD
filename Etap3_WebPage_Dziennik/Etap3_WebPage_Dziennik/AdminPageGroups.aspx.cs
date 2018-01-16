@@ -78,5 +78,17 @@ namespace Etap3_WebPage_Dziennik
             GridView1.DataSource = table;
             GridView1.DataBind();
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            /*
+             SEZON nowy = new SEZON();
+            nowy.SEZ_ROK = int.Parse(tbxSezonRok.Text);
+            db.SEZON.Add(nowy);
+            db.SaveChanges();
+            Response.Redirect("/Administrator.aspx");
+             */
+           // GRUPA grupa = new GRUPA();
+        }
     }
 }
