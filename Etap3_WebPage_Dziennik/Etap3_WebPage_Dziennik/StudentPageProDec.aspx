@@ -105,8 +105,8 @@
                                 
                                 <asp:DropDownList ID="DropDownList1" runat="server">
                                 </asp:DropDownList>
-                                <asp:CheckBox ID="CheckBox1" runat="server" />
-                                <asp:Button ID="Button2" runat="server" Text="Button" />
+                                <asp:CheckBox ID="CheckBox1" runat="server" Text="Declaration" TextAlign="Left" />
+                                <asp:Button ID="ButtonUpdateStudDec" runat="server" Text="Apply" OnClick="ButtonUpdateStudDec_Click" />
                                 
                             </td>
                         </tr>

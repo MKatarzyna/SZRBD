@@ -110,6 +110,9 @@
                         <tr>
                             <td class="auto-style12">
                                 <asp:GridView ID="GridView1" runat="server">
+                                    <Columns>
+                                        <asp:CheckBoxField HeaderText="Select" />
+                                    </Columns>
                                 </asp:GridView>
                             </td>
                         </tr>

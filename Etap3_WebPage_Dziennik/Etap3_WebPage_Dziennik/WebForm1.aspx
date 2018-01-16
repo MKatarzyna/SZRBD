@@ -57,7 +57,7 @@
         <tr>
             <td class="auto-style3">Username:&nbsp; </td>
             <td class="auto-style5">
-                <asp:TextBox ID="TextBoxUsername" runat="server" Width="180px">student1@dziennk.com</asp:TextBox>
+                <asp:TextBox ID="TextBoxUsername" runat="server" Width="180px">prowadzacy1@dziennk.com</asp:TextBox>
             </td>
             <td class="auto-style9">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBoxUsername" ErrorMessage="The username is required." ForeColor="Red"></asp:RequiredFieldValidator>

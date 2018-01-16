@@ -124,7 +124,7 @@
                                 <asp:DropDownList ID="DropDownList1" runat="server">
                                 </asp:DropDownList>
                                 <asp:CheckBox ID="CheckBox1" runat="server" />
-                                <asp:Button ID="Button2" runat="server" Text="Save changes" />
+                                <asp:Button ID="ButtonSaveChanges" runat="server" Text="Save changes" OnClick="ButtonSaveChanges_Click" />
                                 
                             </td>
                         </tr>

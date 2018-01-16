@@ -91,8 +91,16 @@
                     <table class="auto-style13">
                         <tr>
                             <td class="auto-style12">
-                                <asp:GridView ID="GridView1" runat="server">
+                                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="GRUPA">
+                                    <Columns>
+                                        <asp:CommandField ShowEditButton="True" />
+                                        <asp:CommandField ShowDeleteButton="True" />
+                                        <asp:BoundField DataField="Nazwa_grupy" HeaderText="Nazwa_grupy" SortExpression="Nazwa_grupy" />
+                                        <asp:BoundField DataField="Nazwa_kierunku" HeaderText="Nazwa_kierunku" SortExpression="Nazwa_kierunku" />
+                                        <asp:BoundField DataField="Nazwa_wydzialu" HeaderText="Nazwa_wydzialu" SortExpression="Nazwa_wydzialu" />
+                                    </Columns>
                                 </asp:GridView>
+                                <asp:SqlDataSource ID="GRUPA" runat="server" ConnectionString="<%$ ConnectionStrings:DziennikConnectionString %>" SelectCommand="SELECT GRUPA.Nazwa_grupy, KIERUNEK.Nazwa_kierunku, WYDZIAL.Nazwa_wydzialu FROM GRUPA INNER JOIN KIERUNEK ON GRUPA.ID_kierunku = KIERUNEK.ID_kierunku INNER JOIN WYDZIAL ON KIERUNEK.ID_wydzialu = WYDZIAL.ID_wydzialu"></asp:SqlDataSource>
                             </td>
                         </tr>
                         <tr>

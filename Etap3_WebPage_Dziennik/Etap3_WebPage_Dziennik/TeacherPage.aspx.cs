@@ -30,32 +30,32 @@ namespace Etap3_WebPage_Dziennik
 
         protected void ButtonYourData_Click(object sender, EventArgs e)
         {
-            Response.Redirect("TeacherPage.aspx");
+            Response.Redirect("TeacherPage.aspx?ID=" + teacherID);
         }
 
         protected void ButtonSubjects_Click(object sender, EventArgs e)
         {
-            Response.Redirect("TeacherPageSubjects.aspx");
+            Response.Redirect("TeacherPageSubjects.aspx?ID=" + teacherID);
         }
 
         protected void ButtonProjects_Click(object sender, EventArgs e)
         {
-            Response.Redirect("TeacherPageProjects.aspx");
+            Response.Redirect("TeacherPageProjects.aspx?ID=" + teacherID);
         }
 
         protected void ButtonGrSub_Click(object sender, EventArgs e)
         {
-            Response.Redirect("TeacherPageGrSub.aspx");
+            Response.Redirect("TeacherPageGrSub.aspx?ID=" + teacherID);
         }
 
         protected void ButtonGrProj_Click(object sender, EventArgs e)
         {
-            Response.Redirect("TeacherPageGrProj.aspx");
+            Response.Redirect("TeacherPageGrProj.aspx?ID=" + teacherID);
         }
 
         protected void ButtonProjDec_Click1(object sender, EventArgs e)
         {
-            Response.Redirect("TeacherPageProjDec.aspx");
+            Response.Redirect("TeacherPageProjDec.aspx?ID=" + teacherID);
         }
 
         protected void ButtonBackLP_Click(object sender, EventArgs e)
