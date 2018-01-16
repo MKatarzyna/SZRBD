@@ -102,12 +102,58 @@
                         </tr>
                         <tr>
                             <td class="auto-style12">
-                                
+                                <br />
+                                <strong>Edit</strong>:<br />
+                                Select subject:
                                 <asp:DropDownList ID="DropDownList1" runat="server">
                                 </asp:DropDownList>
-                                <asp:CheckBox ID="CheckBox1" runat="server" />
-                                <asp:Button ID="Button2" runat="server" Text="Save changes" />
+                                &nbsp;<asp:DropDownList ID="DropDownList4" runat="server" Visible="False">
+                                </asp:DropDownList>
+                                <br />
+                                Select teacher: <asp:DropDownList ID="DropDownList2" runat="server">
+                                </asp:DropDownList>
+&nbsp;<asp:DropDownList ID="DropDownList3" runat="server" Visible="False">
+                                </asp:DropDownList>
+                                <br />
+&nbsp;<asp:Button ID="ButtonAdd" runat="server" Text="Edit" OnClick="ButtonEdit_Click" />
                                 
+                            &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style12">
+                                
+                                <br />
+                                <strong>Add</strong>:<br />
+                                <br />
+                                Name of subject:
+                                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                                <br />
+                                Select teacher:
+                                <asp:DropDownList ID="DropDownList5" runat="server">
+                                </asp:DropDownList>
+&nbsp;<asp:DropDownList ID="DropDownList6" runat="server" Visible="False">
+                                </asp:DropDownList>
+                                <br />
+                                <asp:Button ID="Button10" runat="server" OnClick="Button10_Click" Text="Add" />
+                                <br />
+                                </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style12">
+                                
+                                <br />
+                                <strong>Delete</strong>:
+                                <br />
+                                Select row: <asp:DropDownList ID="DropDownList11" runat="server">
+                                </asp:DropDownList>
+                                <br />
+                                <asp:Button ID="ButtonRemove" runat="server" OnClick="ButtonRemove_Click" Text="Remove" />
+                                <br />
+                                </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style12">
+                                Status: <asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label>
                             </td>
                         </tr>
                     </table>
