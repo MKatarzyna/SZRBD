@@ -21,6 +21,7 @@ namespace Etap3_WebPage_Dziennik
             _con = new SqlConnection(strConnection);
             teacherID = Request.QueryString["ID"];
             System.Diagnostics.Debug.WriteLine("id: " + teacherID);
+            Button1_Click(sender, e);
         }
 
         protected void ButtonYourData_Click(object sender, EventArgs e)
@@ -60,7 +61,7 @@ namespace Etap3_WebPage_Dziennik
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string queryStatement = "SELECT PROJEKTY.Nazwa_projektu, TEMATY_PROJEKTOW.Nazwa_tematu_projektu, TEMATY_PROJEKTOW.Ilosc_osob_w_projekcie, TEMATY_PROJEKTOW.Pozostala_ilosc_osob FROM zatwierdzenie_projektow, tematy_projektow, prowadzacy, PROJEKTY WHERE PROWADZACY.ID_prowadzacego = PROJEKTY.ID_prowadzacego AND ZATWIERDZENIE_PROJEKTOW.ID_prowadzacego = ZATWIERDZENIE_PROJEKTOW.ID_prowadzacego AND ZATWIERDZENIE_PROJEKTOW.ID_tematu_projektu = TEMATY_PROJEKTOW.ID_tematu_projektu AND ZATWIERDZENIE_PROJEKTOW.ID_projektu = PROJEKTY.ID_projektu";
+            string queryStatement = "SELECT PROJEKTY.Nazwa_projektu, TEMATY_PROJEKTOW.Nazwa_tematu_projektu, TEMATY_PROJEKTOW.Ilosc_osob_w_projekcie, TEMATY_PROJEKTOW.Pozostala_ilosc_osob FROM zatwierdzenie_projektow, tematy_projektow, prowadzacy, PROJEKTY WHERE PROWADZACY.ID_prowadzacego = PROJEKTY.ID_prowadzacego AND ZATWIERDZENIE_PROJEKTOW.ID_prowadzacego = ZATWIERDZENIE_PROJEKTOW.ID_prowadzacego AND ZATWIERDZENIE_PROJEKTOW.ID_tematu_projektu = TEMATY_PROJEKTOW.ID_tematu_projektu AND ZATWIERDZENIE_PROJEKTOW.ID_projektu = PROJEKTY.ID_projektu AND PROWADZACY.ID_prowadzacego =" + teacherID;
             SqlCommand _cmd = new SqlCommand(queryStatement, _con);
 
             SqlDataAdapter _dap = new SqlDataAdapter(_cmd);
@@ -68,12 +69,6 @@ namespace Etap3_WebPage_Dziennik
             DataTable table = new DataTable();
             _dap.Fill(table);
             _con.Close();
-
-            for (int i = 0; i < table.Rows.Count; i++)
-            {
-                // System.Diagnostics.Debug.WriteLine(table.Rows[i][0].ToString());
-                DropDownList1.Items.Add(table.Rows[i][1].ToString());
-            }
 
             GridView1.DataSource = table;
             GridView1.DataBind();

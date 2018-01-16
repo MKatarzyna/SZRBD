@@ -21,6 +21,7 @@ namespace Etap3_WebPage_Dziennik
             _con = new SqlConnection(strConnection);
             teacherID = Request.QueryString["ID"];
             System.Diagnostics.Debug.WriteLine("id: " + teacherID);
+            //Button1_Click(sender, e);
         }
 
         protected void ButtonYourData_Click(object sender, EventArgs e)
@@ -61,7 +62,7 @@ namespace Etap3_WebPage_Dziennik
         protected void Button1_Click(object sender, EventArgs e)
         {
             DropDownList1.Items.Clear();
-            string queryStatement = "SELECT PROJEKTY.Nazwa_projektu, TEMATY_PROJEKTOW.Nazwa_tematu_projektu, STUDENCI.Imie_studenta, STUDENCI.Nazwisko_studenta, STUDENCI.Numer_indeksu_studenta, ZATWIERDZENIE_PROJEKTOW.Deklaracja_studenta, ZATWIERDZENIE_PROJEKTOW.Deklaracja_prowadzacego FROM PROJEKTY, PROWADZACY, STUDENCI, TEMATY_PROJEKTOW, ZATWIERDZENIE_PROJEKTOW WHERE PROJEKTY.ID_prowadzacego = PROWADZACY.ID_prowadzacego AND STUDENCI.ID_studenta = ZATWIERDZENIE_PROJEKTOW.ID_studenta AND ZATWIERDZENIE_PROJEKTOW.ID_prowadzacego = PROWADZACY.ID_prowadzacego AND PROJEKTY.ID_projektu = ZATWIERDZENIE_PROJEKTOW.ID_projektu AND ZATWIERDZENIE_PROJEKTOW.ID_tematu_projektu = TEMATY_PROJEKTOW.ID_tematu_projektu";
+            string queryStatement = "SELECT PROJEKTY.Nazwa_projektu, TEMATY_PROJEKTOW.Nazwa_tematu_projektu, STUDENCI.Imie_studenta, STUDENCI.Nazwisko_studenta, STUDENCI.Numer_indeksu_studenta, ZATWIERDZENIE_PROJEKTOW.Deklaracja_studenta, ZATWIERDZENIE_PROJEKTOW.Deklaracja_prowadzacego FROM PROJEKTY, PROWADZACY, STUDENCI, TEMATY_PROJEKTOW, ZATWIERDZENIE_PROJEKTOW WHERE PROJEKTY.ID_prowadzacego = PROWADZACY.ID_prowadzacego AND STUDENCI.ID_studenta = ZATWIERDZENIE_PROJEKTOW.ID_studenta AND ZATWIERDZENIE_PROJEKTOW.ID_prowadzacego = PROWADZACY.ID_prowadzacego AND PROJEKTY.ID_projektu = ZATWIERDZENIE_PROJEKTOW.ID_projektu AND ZATWIERDZENIE_PROJEKTOW.ID_tematu_projektu = TEMATY_PROJEKTOW.ID_tematu_projektu AND PROJEKTY.ID_prowadzacego =" + teacherID;
             SqlCommand _cmd = new SqlCommand(queryStatement, _con);
 
             SqlDataAdapter _dap = new SqlDataAdapter(_cmd);
@@ -138,7 +139,8 @@ namespace Etap3_WebPage_Dziennik
             _con.Open();
             rdr = _cmd.ExecuteReader();
             _con.Close();
-            
+
+            Button1_Click(sender, e);
         }
     }
 }

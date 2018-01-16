@@ -59,12 +59,6 @@ namespace Etap3_WebPage_Dziennik
             _dap.Fill(table);
             _con.Close();
 
-            for (int i = 0; i < table.Rows.Count; i++)
-            {
-                // System.Diagnostics.Debug.WriteLine(table.Rows[i][0].ToString());
-                DropDownList1.Items.Add(table.Rows[i][1].ToString());
-            }
-
             GridView1.DataSource = table;
             GridView1.DataBind();
         }

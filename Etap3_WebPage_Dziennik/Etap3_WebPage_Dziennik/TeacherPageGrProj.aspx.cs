@@ -68,6 +68,7 @@ namespace Etap3_WebPage_Dziennik
             DropDownList5.Items.Clear();
             DropDownList6.Items.Clear();
             DropDownList7.Items.Clear();
+
             string queryStatement = "SELECT PROJEKTY.Nazwa_projektu, STUDENCI.Imie_studenta, STUDENCI.Nazwisko_studenta, STUDENCI.Numer_indeksu_studenta, OCENY_PROJEKT.Ocena_projekt, OCENY_PROJEKT.Uwagi_projekt FROM PROJEKTY, PROWADZACY, STUDENCI, OCENY_PROJEKT WHERE PROJEKTY.ID_prowadzacego = PROWADZACY.ID_prowadzacego AND STUDENCI.ID_studenta = OCENY_PROJEKT.ID_studenta AND OCENY_PROJEKT.ID_prowadzacego = PROWADZACY.ID_prowadzacego AND PROJEKTY.ID_projektu = OCENY_PROJEKT.ID_projektu AND PROWADZACY.ID_prowadzacego =" + teacherID;
             SqlCommand _cmd = new SqlCommand(queryStatement, _con);
 

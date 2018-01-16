@@ -62,8 +62,7 @@ namespace Etap3_WebPage_Dziennik
 
             for (int i = 0; i < table.Rows.Count; i++)
             {
-                // System.Diagnostics.Debug.WriteLine(table.Rows[i][0].ToString());
-                DropDownList1.Items.Add(table.Rows[i][0].ToString());
+                DropDownList1.Items.Add(i.ToString());
             }
 
             GridView1.DataSource = table;
@@ -74,10 +73,10 @@ namespace Etap3_WebPage_Dziennik
         {
             int idProjektu = -1;
             int idProwadzacego = -1;
-            System.Diagnostics.Debug.WriteLine("DDL: " + (string)DropDownList1.SelectedValue);
-            string queryStatement = "SELECT PROJEKTY.ID_projektu FROM PROJEKTY WHERE PROJEKTY.Nazwa_projektu LIKE '" + (string)DropDownList1.SelectedValue + "'";
+          
+            //  System.Diagnostics.Debug.WriteLine("DDL: " + (string)DropDownList1.SelectedValue);
+            string queryStatement = "SELECT PROJEKTY.ID_projektu FROM PROJEKTY WHERE PROJEKTY.Nazwa_projektu LIKE '" + GridView1.Rows[DropDownList1.SelectedIndex].Cells[0].Text + "'";
             SqlCommand _cmd = new SqlCommand(queryStatement, _con);
-
             _con.Open();
             SqlDataReader rdr = _cmd.ExecuteReader();
             while (rdr.Read())
@@ -101,7 +100,6 @@ namespace Etap3_WebPage_Dziennik
 
             System.Diagnostics.Debug.WriteLine("CheckBox: " + CheckBox1.Checked);
             int value = CheckBox1.Checked ? 1 : 0;
-
             queryStatement = "UPDATE ZATWIERDZENIE_PROJEKTOW SET Deklaracja_studenta =" + value + " WHERE ID_projektu =" + idProjektu + " AND ID_prowadzacego =" + idProwadzacego + " AND ID_studenta =" + studentID;
             _cmd = new SqlCommand(queryStatement, _con);
 
@@ -109,6 +107,7 @@ namespace Etap3_WebPage_Dziennik
             rdr = _cmd.ExecuteReader();
             _con.Close();
 
+            Button1_Click(sender, e);
         }
     }
 }

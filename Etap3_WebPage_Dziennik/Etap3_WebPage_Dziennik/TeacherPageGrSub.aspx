@@ -34,17 +34,17 @@
             width: 194px;
             text-align: center;
         }
+        .auto-style15 {
+            text-align: center;
+            font-size: x-large;
+            height: 30px;
+        }
         .auto-style13 {
             width: 670px;
             height: 236px;
         }
         .auto-style12 {
             width: 330px;
-        }
-        .auto-style15 {
-            text-align: center;
-            font-size: x-large;
-            height: 30px;
         }
     </style>
 </head>
@@ -121,11 +121,56 @@
                         <tr>
                             <td class="auto-style12">
                                 
-                                <asp:DropDownList ID="DropDownList1" runat="server">
+                                <br />
+                                <strong>Add</strong>:<br />
+                                Selecte student:<asp:DropDownList ID="DropDownList1" runat="server">
                                 </asp:DropDownList>
-                                <asp:CheckBox ID="CheckBox1" runat="server" />
-                                <asp:Button ID="Button2" runat="server" Text="Save changes" />
+                                <asp:DropDownList ID="DropDownList2" runat="server" Visible="False">
+                                </asp:DropDownList>
+                                <br />
+                                Select project: <asp:DropDownList ID="DropDownList4" runat="server">
+                                </asp:DropDownList>
+                                <br />
+                                Select grade:<asp:DropDownList ID="DropDownList3" runat="server">
+                                </asp:DropDownList>
+                                <br />
+                                Select comment:<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                                <br />
+                                <asp:Button ID="ButtonAdd" runat="server" Text="Save changes" OnClick="ButtonAdd_Click" />
                                 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style12">
+                                <br />
+                                <strong>Edit grades:</strong><br />
+                                Select row:
+                                <asp:DropDownList ID="DropDownList6" runat="server">
+                                </asp:DropDownList>
+                                <br />
+                                Select grade:
+                                <asp:DropDownList ID="DropDownList7" runat="server">
+                                </asp:DropDownList>
+                                <br />
+                                Select comment:
+                                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                                <br />
+                                <asp:Button ID="ButtonEdit" runat="server" OnClick="ButtonEdit_Click" Text="Edit" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style12">
+                                <br />
+                                <strong>Delete</strong>:<br />
+                                Select row: <asp:DropDownList ID="DropDownList5" runat="server">
+                                </asp:DropDownList>
+                                <br />
+                                <asp:Button ID="ButtonDelete" runat="server" OnClick="ButtonDelete_Click" Text="Delete" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style12">
+                                Status: <asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label>
                             </td>
                         </tr>
                     </table>
