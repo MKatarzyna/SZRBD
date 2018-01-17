@@ -57,7 +57,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:Button ID="Button4" runat="server" Text="Manage groups" Width="200px" OnClick="Button4_Click" />
+                                    <asp:Button ID="Button4" runat="server" Text="Manage groups" Width="200px" OnClick="Button4_Click" Visible="False" />
                                 </td>
                             </tr>
                             <tr>
