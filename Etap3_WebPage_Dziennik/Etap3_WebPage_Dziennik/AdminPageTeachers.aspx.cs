@@ -83,9 +83,7 @@ namespace Etap3_WebPage_Dziennik
             }
 
             GridView1.DataSource = table;
-            GridView1.DataBind();
-
-            
+            GridView1.DataBind();  
         }
 
         protected void ButtonEdit_Click(object sender, EventArgs e)

@@ -24,13 +24,13 @@
             text-align: center;
         }
         .auto-style13 {
-            width: 671px;
+            width: 669px;
             height: 236px;
         }
         .auto-style12 {
             width: 330px;
         }
-    </style>
+        </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -102,12 +102,56 @@
                         </tr>
                         <tr>
                             <td class="auto-style12">
-                                
+                                <strong>Edit</strong>:
+                                <br />
+                                Select teacher:
                                 <asp:DropDownList ID="DropDownList1" runat="server">
                                 </asp:DropDownList>
-                                <asp:CheckBox ID="CheckBox1" runat="server" />
-                                <asp:Button ID="Button2" runat="server" Text="Save changes" />
+                                <asp:Button ID="ButtonReadData1" runat="server" OnClick="ButtonReadData1_Click" Text="Read data" />
+                                <br />
+                                Name: <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                                <br />
+                                Surname:
+                                <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                                <br />
+                                Number of index:
+                                <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                                <br />
+                                Department:
+                                <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+                                <br />
+                                Direction:
+                                <asp:TextBox ID="TextBoxDirection" runat="server"></asp:TextBox>
+                                <br />
+                                Group: <asp:TextBox ID="TextBoxGroup" runat="server"></asp:TextBox>
+                                <br />
+                                Login:
+                                <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+                                <br />
+                                Password:
+                                <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+                                <br />
+                                <br />
+&nbsp;<asp:Button ID="ButtonEdit" runat="server" Text="Edit" OnClick="ButtonEdit_Click" />
                                 
+                            &nbsp;
+                                <asp:Button ID="ButtonDelete" runat="server" OnClick="ButtonDelete_Click" Text="Delete" />
+&nbsp;
+                                <asp:Button ID="ButtonAdd" runat="server" OnClick="ButtonAdd_Click" Text="Add" />
+                                </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style12">
+                                <br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style12">
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style12">
+                                Status: <asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label>
                             </td>
                         </tr>
                     </table>
