@@ -92,13 +92,8 @@ namespace Etap3_WebPage_Dziennik
         {
             //if (!TextBox2.Text.Equals("") && !TextBox3.Text.Equals("") && !TextBox4.Text.Equals("") && !TextBox5.Text.Equals("") && !TextBox6.Text.Equals("") && !TextBox7.Text.Equals(""))
             //{
-
-            
             int idUzytkownika = -1;
             int idProwadzacego = -1;
-
-            //System.Diagnostics.Debug.WriteLine("grid-login: " + GridView1.Rows[DropDownList1.SelectedIndex].Cells[4]);
-            //System.Diagnostics.Debug.WriteLine("grid-pass: " + GridView1.Rows[DropDownList1.SelectedIndex].Cells[5]);
 
             string queryStatement = "SELECT ID_uzytkownika FROM UZYTKOWNICY_SYSTEMU WHERE Login_uzytkownika LIKE '"+GridView1.Rows[DropDownList1.SelectedIndex].Cells[4].Text+"' AND Haslo_uzytkownika LIKE '"+ GridView1.Rows[DropDownList1.SelectedIndex].Cells[5].Text+"'";
             SqlCommand _cmd = new SqlCommand(queryStatement, _con);
@@ -194,6 +189,51 @@ namespace Etap3_WebPage_Dziennik
             _con.Close();
 
             Label1.Text = "New teacher created";
+            Button1_Click(sender, e);
         }
+
+        protected void ButtonDelete_Click(object sender, EventArgs e)
+        {
+            // id prowadzacy, delete 1
+            // id uzykownika, delte 2
+            int idUzytkownika = -1;
+            int idProwadzacego = -1;
+
+            string queryStatement = "SELECT ID_uzytkownika FROM UZYTKOWNICY_SYSTEMU WHERE Login_uzytkownika LIKE '" + GridView1.Rows[DropDownList1.SelectedIndex].Cells[4].Text + "' AND Haslo_uzytkownika LIKE '" + GridView1.Rows[DropDownList1.SelectedIndex].Cells[5].Text + "'";
+            SqlCommand _cmd = new SqlCommand(queryStatement, _con);
+            _con.Open();
+            SqlDataReader rdr = _cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                idUzytkownika = (int)rdr["ID_uzytkownika"];
+            }
+            _con.Close();
+
+            queryStatement = "SELECT ID_prowadzacego FROM PROWADZACY WHERE Imie_prowadzacego LIKE '" + GridView1.Rows[DropDownList1.SelectedIndex].Cells[0].Text + "' AND Nazwisko_prowadzacego LIKE '" + GridView1.Rows[DropDownList1.SelectedIndex].Cells[1].Text + "'";
+            _cmd = new SqlCommand(queryStatement, _con);
+            _con.Open();
+            rdr = _cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                idProwadzacego = (int)rdr["ID_prowadzacego"];
+            }
+            _con.Close();
+
+            queryStatement = "DELETE FROM PROWADZACY WHERE ID_prowadzacego LIKE " + idProwadzacego + " AND ID_uzytkownika LIKE " + idUzytkownika;
+            _cmd = new SqlCommand(queryStatement, _con);
+            _con.Open();
+            rdr = _cmd.ExecuteReader();
+            _con.Close();
+
+            queryStatement = "DELETE FROM UZYTKOWNICY_SYSTEMU WHERE ID_uzytkownika LIKE " + idUzytkownika;
+            _cmd = new SqlCommand(queryStatement, _con);
+            _con.Open();
+            rdr = _cmd.ExecuteReader();
+            _con.Close();
+
+            Label1.Text = "Teacher removed from system.";
+            Button1_Click(sender, e);
+        }
+    
     }
 }

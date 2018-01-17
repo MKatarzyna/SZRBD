@@ -129,24 +129,20 @@
                                 <br />
 &nbsp;<asp:Button ID="ButtonEdit" runat="server" Text="Edit" OnClick="ButtonEdit_Click" />
                                 
-                            &nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td class="auto-style12">
-                                <br />
-                                <strong>Add</strong>:
-                                <br />
+                            &nbsp;
+                                <asp:Button ID="ButtonDelete" runat="server" OnClick="ButtonDelete_Click" Text="Delete" />
+&nbsp;
                                 <asp:Button ID="ButtonAdd" runat="server" OnClick="ButtonAdd_Click" Text="Add" />
+                                </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style12">
                                 <br />
                             </td>
                         </tr>
                         <tr>
                             <td class="auto-style12">
-                                <br />
-                                <strong>Delete</strong>:
-                                <br />
-                                Row:
-                            </td>
+                                &nbsp;</td>
                         </tr>
                         <tr>
                             <td class="auto-style12">
