@@ -22,6 +22,7 @@ namespace Etap3_WebPage_Dziennik
             adminID = Request.QueryString["ID"];
             System.Diagnostics.Debug.WriteLine("id: " + adminID);
         }
+
         protected void Button3_Click(object sender, EventArgs e)
         {
             Response.Redirect("AdminPage.aspx?ID=" + adminID);
@@ -66,6 +67,7 @@ namespace Etap3_WebPage_Dziennik
             DropDownList5.Items.Clear();
             DropDownList6.Items.Clear();
             DropDownList11.Items.Clear();
+
             string queryStatement = "SELECT PRZEDMIOTY.Nazwa_przedmiotu, PROWADZACY.Imie_prowadzacego, PROWADZACY.Nazwisko_prowadzacego FROM PROWADZACY INNER JOIN PRZEDMIOTY ON PROWADZACY.ID_prowadzacego = PRZEDMIOTY.ID_prowadzacego";
             SqlCommand _cmd = new SqlCommand(queryStatement, _con);
 
@@ -131,8 +133,6 @@ namespace Etap3_WebPage_Dziennik
             {
                 DropDownList6.Items.Add(table.Rows[i][2].ToString());
             }
-
-
         }
 
         protected void ButtonEdit_Click(object sender, EventArgs e)

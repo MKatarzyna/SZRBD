@@ -57,7 +57,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:Button ID="Button4" runat="server" Text="Manage groups" Width="200px" OnClick="Button4_Click" />
+                                    <asp:Button ID="Button4" runat="server" Text="Manage groups" Width="200px" OnClick="Button4_Click" Visible="False" />
                                 </td>
                             </tr>
                             <tr>
@@ -102,12 +102,55 @@
                         </tr>
                         <tr>
                             <td class="auto-style12">
-                                
+                                <strong>Edit</strong>:
+                                <br />
+                                Select teacher:
                                 <asp:DropDownList ID="DropDownList1" runat="server">
                                 </asp:DropDownList>
-                                <asp:CheckBox ID="CheckBox1" runat="server" />
-                                <asp:Button ID="Button2" runat="server" Text="Save changes" />
+                                <asp:Button ID="ButtonReadData1" runat="server" OnClick="ButtonReadData1_Click" Text="Read data" />
+                                <br />
+                                Name: <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                                <br />
+                                Surname:
+                                <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                                <br />
+                                Title:
+                                <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                                <br />
+                                Katedra:
+                                <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+                                <br />
+                                Login:
+                                <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+                                <br />
+                                Password:
+                                <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+                                <br />
+                                <br />
+&nbsp;<asp:Button ID="ButtonEdit" runat="server" Text="Edit" OnClick="ButtonEdit_Click" />
                                 
+                            &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style12">
+                                <br />
+                                <strong>Add</strong>:
+                                <br />
+                                <asp:Button ID="ButtonAdd" runat="server" OnClick="ButtonAdd_Click" Text="Add" />
+                                <br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style12">
+                                <br />
+                                <strong>Delete</strong>:
+                                <br />
+                                Row:
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style12">
+                                Status: <asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label>
                             </td>
                         </tr>
                     </table>
